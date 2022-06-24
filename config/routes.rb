@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  get 'coming_soon/index'
+
+  resources :srts
+  resources :bookmarks
   devise_for :users, controllers: {
     sessions: 'users/sessions',
     registrations: 'users/registrations',

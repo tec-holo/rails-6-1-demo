@@ -1,0 +1,27 @@
+<%= form_with(model: srt) do |form| %>
+  <% if srt.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(srt.errors.count, "error") %> prohibited this srt from being saved:</h2>
+
+      <ul>
+        <% srt.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :link_name %>
+    <%= form.text_field :link_name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :paste_link %>
+    <%= form.text_area :paste_link %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

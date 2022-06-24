@@ -1,0 +1,17 @@
+<h1>Bookmarker</h1>
+
+    <% @bookmarks.each do |bookmark| %>
+      <tr>
+        <td><%= bookmark.link_name %></td>
+        <td><%= bookmark.paste_url %></td>
+        <td><%= link_to 'Show', bookmark %></td>
+        <td><%= link_to 'Edit', edit_bookmark_path(bookmark) %></td>
+        <td><%= link_to 'Destroy', bookmark, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Bookmark', new_bookmark_path %>
