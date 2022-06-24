@@ -5,10 +5,7 @@ class BookmarksController < ApplicationController
   # GET /bookmarks or /bookmarks.json
   def index
     @bookmarks = Bookmark.all
-  end
-
-  # GET /bookmarks/1 or /bookmarks/1.json
-  def show
+    @bookmark = Bookmark.new
   end
 
   # GET /bookmarks/new
@@ -26,7 +23,7 @@ class BookmarksController < ApplicationController
 
     respond_to do |format|
       if @bookmark.save
-        format.html { redirect_to bookmark_url(@bookmark), notice: "Bookmark was successfully created." }
+        format.html { redirect_to bookmarks_url, notice: "Bookmark was successfully created." }
         format.json { render :show, status: :created, location: @bookmark }
       else
         format.html { render :new, status: :unprocessable_entity }
