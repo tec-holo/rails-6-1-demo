@@ -4,8 +4,8 @@ class BookmarksController < ApplicationController
 
   # GET /bookmarks or /bookmarks.json
   def index
-    @bookmarks = Bookmark.all
-    @bookmark = Bookmark.new
+    @bookmarks = Bookmark.order(created_at: :desc)
+    @new_bookmark = Bookmark.new
   end
 
   # GET /bookmarks/new
