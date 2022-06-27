@@ -4,7 +4,7 @@ class SrtsController < ApplicationController
 
   # GET /srts or /srts.json
   def index
-    @srts = Srt.all
+    @srts = current_user.srts.order(created_at: :desc)
   end
 
   # GET /srts/1 or /srts/1.json
@@ -22,7 +22,7 @@ class SrtsController < ApplicationController
 
   # POST /srts or /srts.json
   def create
-    @srt = Srt.new(srt_params)
+    @srt = Srt.new(srt_params.merge(user: current_user))
 
     respond_to do |format|
       if @srt.save
@@ -66,6 +66,6 @@ class SrtsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def srt_params
-      params.require(:srt).permit(:link_name, :paste_link)
+      params.require(:srt).permit(:link_name, :paste_link, :user_id)
     end
 end
