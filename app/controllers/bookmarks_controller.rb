@@ -4,7 +4,7 @@ class BookmarksController < ApplicationController
 
   # GET /bookmarks or /bookmarks.json
   def index
-    @bookmarks = Bookmark.order(created_at: :desc)
+    @bookmarks = current_user.bookmarks.order(created_at: :desc)
     @new_bookmark = Bookmark.new
   end
 
@@ -19,7 +19,7 @@ class BookmarksController < ApplicationController
 
   # POST /bookmarks or /bookmarks.json
   def create
-    @bookmark = Bookmark.new(bookmark_params)
+    @bookmark = Bookmark.new(bookmark_params.merge(user: current_user))
 
     respond_to do |format|
       if @bookmark.save
@@ -63,6 +63,6 @@ class BookmarksController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def bookmark_params
-      params.require(:bookmark).permit(:link_name, :paste_url)
+      params.require(:bookmark).permit(:link_name, :paste_url, :user_id)
     end
 end
