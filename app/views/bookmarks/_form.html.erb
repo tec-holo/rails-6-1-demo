@@ -13,15 +13,15 @@
 
   <div class="field">
     <%= form.label :link_name %>
-    <%= form.text_field :link_name %>
+    <%= form.text_field :link_name, class: "form-control" %>
   </div>
 
   <div class="field">
     <%= form.label :paste_url %>
-    <%= form.text_area :paste_url %>
+    <%= form.text_area :paste_url, class: "form-control" %>
   </div>
 
-  <div class="actions">
-    <%= form.submit %>
+  <div class="actions mt-2">
+    <%= form.submit "Create", class: "btn btn-outline-dark" %>
   </div>
 <% end %>

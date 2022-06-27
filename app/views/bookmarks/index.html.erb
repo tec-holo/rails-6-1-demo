@@ -1,17 +1,24 @@
 <h1>Bookmarker</h1>
-
-    <% @bookmarks.each do |bookmark| %>
-      <tr>
-        <td><%= bookmark.link_name %></td>
-        <td><%= bookmark.paste_url %></td>
-        <td><%= link_to 'Show', bookmark %></td>
-        <td><%= link_to 'Edit', edit_bookmark_path(bookmark) %></td>
-        <td><%= link_to 'Destroy', bookmark, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<br>
-
-<%= link_to 'New Bookmark', new_bookmark_path %>
+<p>
+  <a class="btn btn-dark btn-lg shadow" data-bs-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
+    New Bookmark
+  </a>
+</p>
+<div class="collapse mb-3" id="collapseExample">
+  <div class="card card-body">
+    <%= render 'form', bookmark: @new_bookmark %>
+  </div>
+</div>
+<div class="btn-group">
+  <% @bookmarks.each do |bookmark| %>
+    <a href="<%= bookmark.paste_url %>" target="_blank" type="button" class="btn btn-outline-dark shadow"><%= bookmark.link_name %></a>
+    <button type="button" class="btn btn-dark dropdown-toggle dropdown-toggle-split" data-bs-toggle="dropdown" aria-expanded="false">
+      <span class="visually-hidden">Toggle Dropdown</span>
+    </button>
+    <ul class="dropdown-menu">
+      <li><%= link_to 'Edit', edit_bookmark_path(bookmark), class: "dropdown-item" %></li>
+      <li><hr class="dropdown-divider"></li>
+      <li><%= link_to 'Destroy', bookmark, method: :delete, data: { confirm: 'Are you sure?' }, class: "dropdown-item" %></li>
+    </ul>
+  <% end %>
+</div>
