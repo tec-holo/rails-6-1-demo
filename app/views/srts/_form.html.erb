@@ -11,17 +11,33 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= form.label :link_name %>
-    <%= form.text_field :link_name %>
+
+  <div class="form-floating">
+    <%= form.text_field :date, type: "date", class: "form-control", id: "floatingTextarea" %>
+    <label for="floatingTextarea">Date</label>
   </div>
 
-  <div class="field">
-    <%= form.label :paste_link %>
-    <%= form.text_area :paste_link %>
+  <div class="form-floating">
+    <%= form.text_area :ops, class: "form-control", id: "floatingTextarea", placeholder: "What for" %>
+    <label for="floatingTextarea">Ops</label>
   </div>
 
-  <div class="actions">
-    <%= form.submit %>
+  <div class="form-floating">
+    <%= form.text_area :browser_search, class: "form-control", id: "floatingTextarea", placeholder: "What'dya search" %>
+    <label for="floatingTextarea">Browser Search</label>
+  </div>
+
+  <div class="form-floating">
+    <%= form.text_area :source, class: "form-control", id: "floatingTextarea", placeholder: "Source" %>
+    <label for="floatingTextarea">Source</label>
+  </div>
+
+  <div class="form-floating">
+    <%= form.text_area :solution, class: "form-control", id: "floatingTextarea", placeholder: "Solution" %>
+    <label for="floatingTextarea">Solution</label>
+  </div>
+
+  <div class="actions mt-2">
+    <%= form.submit "Create", class: "btn btn-outline-light" %>
   </div>
 <% end %>

@@ -13,3 +13,7 @@
  *= require_tree .
  *= require_self
  */
+
+.form-floating {
+    margin-bottom: 1rem;
+}
