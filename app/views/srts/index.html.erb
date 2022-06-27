@@ -1,29 +1,37 @@
-<p id="notice"><%= notice %></p>
-
-<h1>Srts</h1>
-
-<table>
+<h1>Semantic Research Table</h1>
+<p>
+  <a class="btn btn-outline-light btn-lg shadow" data-bs-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
+    Register entry
+  </a>
+</p>
+<div class="collapse mb-3" id="collapseExample">
+    <%= render 'form', srt: @new_srt %>
+</div>
+<table class="table table-light table-striped-columns table-hover shadow">
   <thead>
     <tr>
-      <th>Link name</th>
-      <th>Paste link</th>
-      <th colspan="3"></th>
+      <th>Date</th>
+      <th>Operations</th>
+      <th>Browser search</th>
+      <th>Source</th>
+      <th>Solution</th>
+      <th>Actions</th>
     </tr>
   </thead>
 
   <tbody>
     <% @srts.each do |srt| %>
       <tr>
-        <td><%= srt.link_name %></td>
-        <td><%= srt.paste_link %></td>
-        <td><%= link_to 'Show', srt %></td>
-        <td><%= link_to 'Edit', edit_srt_path(srt) %></td>
-        <td><%= link_to 'Destroy', srt, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= srt.date %></td>
+        <td><%= srt.ops %></td>
+        <td><%= srt.browser_search %></td>
+        <td><%= srt.source %></td>
+        <td><%= srt.solution %></td>
+        <td>
+          <%= link_to 'Edit', edit_srt_path(srt), class: "btn btn-outline-info btn-sm" %>
+          <%= link_to 'Delete', srt, method: :delete, class: "btn btn-outline-danger btn-sm", data: { confirm: 'Are you sure?' } %>
+        </td>
       </tr>
     <% end %>
   </tbody>
 </table>
-
-<br>
-
-<%= link_to 'New Srt', new_srt_path %>

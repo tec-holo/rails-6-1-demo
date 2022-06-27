@@ -5,6 +5,7 @@ class SrtsController < ApplicationController
   # GET /srts or /srts.json
   def index
     @srts = current_user.srts.order(created_at: :desc)
+    @new_srt = Srt.new
   end
 
   # GET /srts/1 or /srts/1.json
@@ -26,7 +27,7 @@ class SrtsController < ApplicationController
 
     respond_to do |format|
       if @srt.save
-        format.html { redirect_to srt_url(@srt), notice: "Srt was successfully created." }
+        format.html { redirect_to srt_url, notice: "Srt was successfully created." }
         format.json { render :show, status: :created, location: @srt }
       else
         format.html { render :new, status: :unprocessable_entity }
@@ -39,7 +40,7 @@ class SrtsController < ApplicationController
   def update
     respond_to do |format|
       if @srt.update(srt_params)
-        format.html { redirect_to srt_url(@srt), notice: "Srt was successfully updated." }
+        format.html { redirect_to srt_url, notice: "Srt was successfully updated." }
         format.json { render :show, status: :ok, location: @srt }
       else
         format.html { render :edit, status: :unprocessable_entity }
@@ -66,6 +67,6 @@ class SrtsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def srt_params
-      params.require(:srt).permit(:link_name, :paste_link, :user_id)
+      params.require(:srt).permit(:date, :ops, :browser_search, :source, :solution, :user_id)
     end
 end
