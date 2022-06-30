@@ -10,6 +10,6 @@ Rails.application.routes.draw do
     passwords: 'users/passwords',
     unlocks: 'users/unlocks'
   }
-
+  get 'home/utilities'
   root 'home#index'
 end

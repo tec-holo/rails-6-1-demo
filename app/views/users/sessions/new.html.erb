@@ -1,21 +1,27 @@
-<h1>Log in</h1>
-
-<%= form_for(resource, as: resource_name, url: user_session_path) do |f| %>
-  <div class="form-floating">
-    <%= f.email_field :email, type:"email", class: "form-control", id: "floatingInput", placeholder: "name@example.com",
-                      autofocus: true, autocomplete: "email" %>
-    <label for="floatingInput">Email address</label>
+<div class="card border-dark mx-auto shadow" style="width: 18rem;">
+  <div class="card-body">
+    <h1>Log in</h1>
   </div>
+  <div class="card-body">
+    <%= form_for(resource, as: resource_name, url: user_session_path) do |f| %>
+      <div class="form-floating">
+        <%= f.email_field :email, type:"email", class: "form-control shadow", id: "floatingInput", placeholder: "name@example.com",
+                          autofocus: true, autocomplete: "email" %>
+        <label for="floatingInput">Email address</label>
+      </div>
 
-  <div class="form-floating">
-    <%= f.password_field :password, autocomplete: "current-password", type: "password", class: "form-control",
-                         id: "floatingPassword", placeholder: "name@example.com" %>
-    <label for="floatingPassword">Password</label>
-  </div>
+      <div class="form-floating">
+        <%= f.password_field :password, autocomplete: "current-password", type: "password", class: "form-control shadow",
+                             id: "floatingPassword", placeholder: "name@example.com" %>
+        <label for="floatingPassword">Password</label>
+      </div>
 
-  <div class="actions">
-    <%= f.submit "Log in", class: "btn btn-outline-dark btn-lg" %>
+      <div class="actions">
+        <%= f.submit "Sign in", class: "btn btn-outline-dark btn-lg shadow" %>
+      </div>
+    <% end %>
   </div>
-<% end %>
-<br>
-<%= render "users/shared/links" %>
+  <div class="card-footer border-dark">
+    <%= render "users/shared/links" %>
+  </div>
+</div>

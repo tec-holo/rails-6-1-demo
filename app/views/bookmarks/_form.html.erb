@@ -10,18 +10,21 @@
       </ul>
     </div>
   <% end %>
-
-  <div class="field">
-    <%= form.label :link_name %>
-    <%= form.text_field :link_name, class: "form-control" %>
-  </div>
-
-  <div class="field">
-    <%= form.label :paste_url %>
-    <%= form.text_area :paste_url, class: "form-control" %>
-  </div>
-
-  <div class="actions mt-2">
-    <%= form.submit "Create", class: "btn btn-outline-dark" %>
+  <div class="row">
+    <div class="col">
+      <div class="form-floating">
+        <%= form.text_field :link_name, class: "form-control", placeholder: "Name your bookmark", id: "floatingTextarea" %>
+        <label for="floatingTextarea">Bookmark Name</label>
+      </div>
+    </div>
+    <div class="col">
+      <div class="form-floating">
+        <%= form.text_area :paste_url, class: "form-control", placeholder: "Paste link", id: "floatingTextarea2" %>
+        <label for="floatingTextarea2">Paste 🔗</label>
+      </div>
+    </div>
+    <div class="actions mt-2">
+      <%= form.submit "Pin 📌", class: "btn btn-outline-dark" %>
+    </div>
   </div>
 <% end %>

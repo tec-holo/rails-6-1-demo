@@ -1,12 +1,14 @@
 <h1>Bookmarker</h1>
 <p>
   <a class="btn btn-dark btn-lg shadow" data-bs-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
-    New Bookmark
+    New Bookmark 🚩🚩🚩
   </a>
 </p>
 <div class="collapse mb-3" id="collapseExample">
-  <div class="card card-body">
-    <%= render 'form', bookmark: @new_bookmark %>
+  <div class="card border-dark shadow">
+    <div class="card-body">
+      <%= render 'form', bookmark: @new_bookmark %>
+    </div>
   </div>
 </div>
 <div class="btn-group">
@@ -16,6 +18,7 @@
       <span class="visually-hidden">Toggle Dropdown</span>
     </button>
     <ul class="dropdown-menu">
+      <li></li>
       <li><%= link_to 'Edit', edit_bookmark_path(bookmark), class: "dropdown-item" %></li>
       <li><hr class="dropdown-divider"></li>
       <li><%= link_to 'Destroy', bookmark, method: :delete, data: { confirm: 'Are you sure?' }, class: "dropdown-item" %></li>
