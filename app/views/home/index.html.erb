@@ -1,32 +1,29 @@
 <h1 class="text-center">Welcome to <%= ENV['APP_NAME'] %></h1>
-<div class="card bg-dark text-white">
-  <%= image_tag 'cosmos.png', class: "card-img", alt: "billions of stars" %>
-  <div class="card-img-overlay text-center my-5">
-    <h3 class="card-title">Try the utilities menu and check out the awesome features you'll find here for free!</h3>
-    <p class="card-text">
-      Make a free account to start using utilities. Don't worry, we won't spam you with ads, we don't have a mailer in production yet.
-    </p>
-    <div class="row g-2">
-      <div class="col-md-6">
-        <div class="card border-dark">
-          <div class="card-body">
-            <h5 class="card-title">Bookmarker</h5>
-            <p class="card-text">
-              Tired of browser bookmarks? Not only will this Utility help you organize your bookmarks, it helps me organize myself!
-            </p>
-            <%= link_to 'Go to My Bookmarker', bookmarks_path, class: "btn btn-outline-light btn-lg" %>
-          </div>
+<div class="bg-transparent text-white">
+  <h3 class="card-title">Try the utilities menu and check out the awesome features you'll find here for free!</h3>
+  <p class="card-text">
+    Make a free account to start using utilities. Don't worry, we won't spam you with ads, we don't have a mailer in production yet.
+  </p>
+  <div class="row g-2">
+    <div class="col-md-6">
+      <div class="card border-dark">
+        <div class="card-body">
+          <h5 class="card-title">Bookmarker</h5>
+          <p class="card-text">
+            Tired of browser bookmarks? Not only will this Utility help you organize your bookmarks, it helps me organize myself!
+          </p>
+          <%= link_to 'Go to My Bookmarker', bookmarks_path, class: "btn btn-outline-light btn-lg" %>
         </div>
       </div>
-      <div class="col-md-6">
-        <div class="card border-dark text-white">
-          <div class="card-body">
-            <h5 class="card-title">Semantic Research Table</h5>
-            <p class="card-text">
-              Tired of accidentally closing tabs? This Utility will help you keep track of your research efforts.
-            </p>
-            <%= link_to 'Go to My SRTs', srts_path, class: "btn btn-outline-light btn-lg" %>
-          </div>
+    </div>
+    <div class="col-md-6">
+      <div class="card border-dark text-white">
+        <div class="card-body">
+          <h5 class="card-title">Semantic Research Table</h5>
+          <p class="card-text">
+            Tired of accidentally closing tabs? This Utility will help you keep track of your research efforts.
+          </p>
+          <%= link_to 'Go to My SRTs', srts_path, class: "btn btn-outline-light btn-lg" %>
         </div>
       </div>
     </div>
