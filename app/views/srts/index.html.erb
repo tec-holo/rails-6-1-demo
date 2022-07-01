@@ -1,11 +1,15 @@
-<h1 class="text-white">Semantic Research Table</h1>
+<h1 class="text-white mb-5">Semantic Research Table</h1>
 <p>
-  <a class="btn btn-outline-light btn-lg shadow" data-bs-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
-    Register entry
+  <a class="btn btn-outline-light btn-lg shadow" data-bs-toggle="collapse" href="#collapseExample2" role="button" aria-expanded="false" aria-controls="collapseExample2">
+    New search entry 🖊️
   </a>
 </p>
-<div class="collapse mb-3" id="collapseExample">
-    <%= render 'form', srt: @new_srt %>
+<div class="collapse mb-3" id="collapseExample2">
+  <div class="card border-dark shadow">
+    <div class="card-body">
+      <%= render 'form', srt: @new_srt %>
+    </div>
+  </div>
 </div>
 <table class="table table-light table-striped-columns table-hover shadow">
   <thead>
