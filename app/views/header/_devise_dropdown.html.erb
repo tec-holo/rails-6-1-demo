@@ -6,7 +6,8 @@
     <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
       <% if user_signed_in? %>
 <!--        <li><%#= link_to 'My profile', my_profile_path, class: "dropdown-item" %></li>-->
-<!--        <li><hr class="dropdown-divider"></li>-->
+        <li><small class="dropdown-item disabled">sign in as: <%= current_user.email %></small></li>
+        <li><hr class="dropdown-divider"></li>
         <li><%= link_to 'Log out', destroy_user_session_path, method: :delete, class: "dropdown-item" %></li>
       <% else %>
         <li><%= link_to 'Sign-in', new_user_session_path, class: "dropdown-item" %></li>
