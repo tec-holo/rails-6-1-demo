@@ -27,7 +27,7 @@ class SrtsController < ApplicationController
 
     respond_to do |format|
       if @srt.save
-        format.html { redirect_to srt_url, notice: "Srt was successfully created." }
+        format.html { redirect_to srts_url, notice: "Srt was successfully created." }
         format.json { render :show, status: :created, location: @srt }
       else
         format.html { render :new, status: :unprocessable_entity }
@@ -40,7 +40,7 @@ class SrtsController < ApplicationController
   def update
     respond_to do |format|
       if @srt.update(srt_params)
-        format.html { redirect_to srt_url, notice: "Srt was successfully updated." }
+        format.html { redirect_to srts_url, notice: "Srt was successfully updated." }
         format.json { render :show, status: :ok, location: @srt }
       else
         format.html { render :edit, status: :unprocessable_entity }
